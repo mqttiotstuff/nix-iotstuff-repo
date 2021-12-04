@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, cmake, simgrid, boost }:
+{ stdenv, fetchgit, cmake, leveldb, zig }:
 
 stdenv.mkDerivation rec {
   pname = "iotmonitor";
