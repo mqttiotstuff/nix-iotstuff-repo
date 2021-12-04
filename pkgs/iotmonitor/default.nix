@@ -1,4 +1,4 @@
-{ stdenv, fetchgit, cmake, leveldb, zig }:
+{ stdenv, fetchgit, cmake, leveldb, zig, git }:
 
 stdenv.mkDerivation rec {
   pname = "iotmonitor";
