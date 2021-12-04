@@ -9,7 +9,6 @@ stdenv.mkDerivation rec {
     # computed with nix-prefetch-git, using the fetch submodules
     sha256 = "1fp1yarqzpyaillmgxws2nck8zjfjk9qcgqrk3hndqaq1sy11wl2";
     fetchSubmodules = true;
-    ref = "refs/heads/master";
     rev = "ac20f2308d52ea12daa3c7e482b79d07451f664b";
   };
 
