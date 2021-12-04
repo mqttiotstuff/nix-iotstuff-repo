@@ -1,10 +1,10 @@
 
 
-nix package construction from source
-
-run the experiment manually :
+## IOT stuff Nix packages
 
 
-nix-shell default.nix -A expEnv
+from example folder, 
+
+nix-shell use.nix
 
 
