@@ -7,14 +7,14 @@ with pkgs;
 let packages = rec {
 	iotmonitor = stdenv.mkDerivation rec {
 		pname = "iotmonitor";
-		version = "0.2.2";
+		version = "0.2.3";
 
 	  src = pkgs.fetchgit {
 	    url = "https://github.com/mqttiotstuff/iotmonitor.git";
 	    # computed with nix-prefetch-git, using the fetch submodules
-	    sha256 = "1fp1yarqzpyaillmgxws2nck8zjfjk9qcgqrk3hndqaq1sy11wl2";
+	    sha256 = "07v3s7kasky439k0ijf2bm19d8linpdjdb8nsh9wib664hbyr7my";
 	    fetchSubmodules = true;
-	    rev = "ac20f2308d52ea12daa3c7e482b79d07451f664b";
+	    rev = "aa6eb21464be7aed51893b465a295f07931f3247";
 	  };
 
 	  buildInputs = [
@@ -22,6 +22,7 @@ let packages = rec {
 	    git
 	    cmake
 	    leveldb
+            pandoc
 	  ];
 
 	  configurePhase = ''
