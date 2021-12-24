@@ -12,3 +12,7 @@ from example folder location, launch
     nix-shell use.nix
 
 
+
+### Use as a flake
+
+
