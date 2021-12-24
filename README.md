@@ -1,10 +1,14 @@
 
 
-## IOT stuff Nix packages
+## IOT Mqtt - Nix packages
+
+This repository permit to simply use the iotmonitor and other tools, using nixpkg
 
 
-from example folder, 
+### Use the iotmonitor
 
-nix-shell use.nix
+from example folder location, launch 
+
+    nix-shell use.nix
 
 

@@ -12,12 +12,7 @@ stdenv.mkDerivation rec {
     rev = "ac20f2308d52ea12daa3c7e482b79d07451f664b";
   };
 
-  buildInputs = [
-    zig
-    git
-    cmake
-    leveldb
-  ];
+  buildInputs = [ zig git cmake leveldb ];
 
   configurePhase = ''
     ls
