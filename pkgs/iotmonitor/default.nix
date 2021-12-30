@@ -7,7 +7,7 @@ stdenv.mkDerivation rec {
   src = fetchgit {
     url = "https://github.com/mqttiotstuff/iotmonitor.git";
     # computed with nix-prefetch-git, using the fetch submodules
-    sha256 = "1fp1yarqzpyaillmgxws2nck8zjfjk9qcgqrk3hndqaq1sy11wl2";
+    sha256 = "0hy4kb5wir4scnfsqyxlwm6fxv48lvprfrqk5nwqlydv7k86a139";
     fetchSubmodules = true;
     rev = "342d07d0ec4635cfd2aa109e1dcfd5ab6534c5c7";
   };
