@@ -1,5 +1,5 @@
 { nixpkgs ? <nixpkgs>, iotstuff ? import (fetchTarball
-  "https://github.com/mqttiotstuff/nix-iotstuff-repo/archive/0a193e8dd9e9a46c3411a84ac2afb59eb2433a9b.tar.gz")
+  "https://github.com/mqttiotstuff/nix-iotstuff-repo/archive/a901eabddc153f99435858a760b2de393ea5f831.tar.gz")
   { } }:
 
 iotstuff.pkgs.mkShell rec { buildInputs = [ iotstuff.iotmonitor ]; }
