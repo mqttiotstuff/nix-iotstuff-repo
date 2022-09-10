@@ -16,7 +16,7 @@ let
         # computed with nix-prefetch-git, using the fetch submodules option
         sha256 = "1bipm1fwbgbrqcy4aixx99r4pxks42ln4nb94cj0qyc7q2a3845k";
         fetchSubmodules = true;
-        rev = "v0.2.7";
+        rev = "5e71dcb86b68e403f2902f303d09b014bf9a5290";
       };
 
       buildInputs = [ zig git cmake leveldb pandoc ];
