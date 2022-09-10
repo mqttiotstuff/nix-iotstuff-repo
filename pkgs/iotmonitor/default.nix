@@ -1,32 +1,46 @@
-{ stdenv, fetchgit, cmake, leveldb, zig, git }:
+{ pkgs ?
+  import (fetchTarball "https://github.com/NixOS/nixpkgs/archive/21.11.tar.gz")
+  { } }:
 
-stdenv.mkDerivation rec {
-  pname = "iotmonitor";
-  version = "0.2.5";
+with pkgs;
 
-  src = fetchgit {
-    url = "https://github.com/mqttiotstuff/iotmonitor.git";
-    # computed with nix-prefetch-git, using the fetch submodules
-    sha256 = "1x9k4kxc8k6z92pcxkm17ykybi6y67qvxyppzx53zrx3gslz6ivz";
-    fetchSubmodules = true;
-    rev = "7d847fd599df612ffb6036d00f3b61276b4a640f";
+let
+  packages = rec {
+    iotmonitor = stdenv.mkDerivation rec {
+      pname = "iotmonitor";
+      version = "0.2.7";
+
+      src = pkgs.fetchgit {
+        url = "https://github.com/mqttiotstuff/iotmonitor.git";
+
+        # computed with nix-prefetch-git, using the fetch submodules option
+        sha256 = "1bipm1fwbgbrqcy4aixx99r4pxks42ln4nb94cj0qyc7q2a3845k";
+        fetchSubmodules = true;
+        rev = "v0.2.7";
+      };
+
+      buildInputs = [ zig git cmake leveldb pandoc ];
+
+      configurePhase = ''
+        ls
+        zig version
+      '';
+
+      buildPhase = ''
+        make
+        zig build
+      '';
+
+      installPhase = ''
+        mkdir -p $out/bin
+        mv bin/iotmonitor $out/bin
+      '';
+    };
+
+    expEnv = mkShell rec {
+      name = "iotmonitorEnv";
+      buildInputs = [ iotmonitor ];
+    };
+
   };
-
-  buildInputs = [ zig git cmake leveldb ];
-
-  configurePhase = ''
-    ls
-    zig version
-  '';
-
-  buildPhase = ''
-    make
-    zig build
-  '';
-
-  installPhase = ''
-    mkdir -p $out/bin
-    mv bin/iotmonitor $out/bin
-  '';
-
-}
+in packages
