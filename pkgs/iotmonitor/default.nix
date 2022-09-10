@@ -7,9 +7,9 @@ stdenv.mkDerivation rec {
   src = fetchgit {
     url = "https://github.com/mqttiotstuff/iotmonitor.git";
     # computed with nix-prefetch-git, using the fetch submodules
-    sha256 = "sha256-4UdCf/uHxa5GAbLYiaVwXxJSy3qZMftSO1efj5c/PZ0";
+    sha256 = "1x9k4kxc8k6z92pcxkm17ykybi6y67qvxyppzx53zrx3gslz6ivz";
     fetchSubmodules = true;
-    rev = "9df1d2ee085d672aeceec9582e5d6424189d060c";
+    rev = "7d847fd599df612ffb6036d00f3b61276b4a640f";
   };
 
   buildInputs = [ zig git cmake leveldb ];
